@@ -7,6 +7,7 @@
 * notion-icon
 * 把标题前面的emoji表情去掉更统一一点，我自己感觉怪怪的
 ### 以下是借鉴过的大佬的主题
+---
 主题：Tsundoku Green <br>
 作者：Achuan-2 <br>
 GitHub：https://github.com/Achuan-2/siyuan-themes-tsundoku-green <br>
