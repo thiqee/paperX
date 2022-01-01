@@ -1,10 +1,4 @@
 @font-face {
-  font-family: "CRWK";
-  font-style: normal;
-  src: url("fonts/仓耳今楷03-W04.ttf");
-}
-
-@font-face {
   font-family: "MiSans-Normal";
   font-style: normal;
   src: url("fonts/小米字体MiSans-Normal.ttf");
@@ -31,10 +25,13 @@
   --b3-theme-surface: #f3f3f3;
   --b3-theme-surface-light: rgba(243, 243, 243, 0.897);
   --b3-theme-error: #d23f31;
-  --b3-theme-zz1: #ffffff;
-  --b3-theme-zz2: #03416ee8;
+  --b3-theme-zz1: #ffffff;/*白色*/
+  --b3-theme-zz2: #03416ee8;/*主色*/
   --b3-theme-zz3: #034b61bb;
-  --b3-theme-zz4: #6867672c;
+  --b3-theme-zz4: #6867672c;/*浅色、阴影色*/
+  --b3-theme-zz5: #f85f73;/*鼠标、光标经过颜色*/
+  --b3-theme-zz6:#fbe8d3;/*标签颜色*/
+  --b3-theme-zz7:#fcfcfc00;/*透明*/
   /* 文字颜色 */
   --b3-theme-on-primary: #fff;
   --b3-theme-on-secondary: #fff;
@@ -202,8 +199,6 @@
 .b3-tab-container .b3-select,
 .b3-card,
 .config-account__center--text,
-
-.protyle-wysiwyg [data-node-id] span[data-type="tag"],
 div[style*="background-color: var"],
 strong[style*="background-color: var"],
 .protyle-toolbar,
@@ -212,7 +207,6 @@ strong[style*="background-color: var"],
 .b3-menu__item,
 .vis-network,
 .layout__empty,
-
 .b3-switch:after,
 .textLayer,
 .block__content,
@@ -230,6 +224,8 @@ strong[style*="background-color: var"],
   /*滚动条*/
   background-color: rgba(24, 23, 23, 0);
 }
+.protyle-content {
+}
 
 /*块引用*/
 .protyle-wysiwyg [data-node-id] span[data-type="block-ref"]:before {
@@ -237,12 +233,14 @@ strong[style*="background-color: var"],
   color: var(--b3-theme-zz2); /*修改前半部分颜色*/
   margin-right: 3px;
   font-weight: bold;
+  transition: 0.4s;
 }
 .protyle-wysiwyg [data-node-id] span[data-type="block-ref"]:after {
   content: "」"; /*后半部分的符号*/
   color: var(--b3-theme-zz2); /*后改前半部分颜色*/
   margin-left: 3px;
   font-weight: bold;
+  transition: 0.4s;
 }
 .protyle-wysiwyg [data-node-id] span[data-type="block-ref"] {
   color: var(--b3-theme-zz2); /*更改颜色*/
@@ -250,13 +248,16 @@ strong[style*="background-color: var"],
   box-sizing: border-box;
   height: 1.5em;
   opacity: 1;
-  /* 加粗 */
   font-weight: bold;
+  transition: 0.4s;
 }
-.protyle-wysiwyg [data-node-id] span[data-type="block-ref"]:hover {
-  color: var(--b3-protyle-inline-blockref-hover-color); /*更改鼠标悬浮的颜色*/
-  border-bottom: 1px dashed var(--b3-theme-zz2); /*下划线可以去掉*/
-}
+.protyle-wysiwyg [data-node-id] span[data-type="block-ref"]:hover,
+.protyle-wysiwyg [data-node-id] span[data-type="block-ref"]:hover::after,
+.protyle-wysiwyg [data-node-id] span[data-type="block-ref"]:hover::before {
+  color: var(--b3-theme-zz5);
+} 
+
+
 /* 块引用悬浮动画 */
 .block__popover.block__popover--move.block__popover--open {
     animation: showBlock 0.35s ease-in-out;
@@ -279,11 +280,11 @@ strong[style*="background-color: var"],
   
   .block__popover.block__popover--move.block__popover--open {
     min-height: 40%;
-    border-radius: 2px;
+    border-radius: 7px;
     position: absolute;
       bottom:200px;
       right: 40px;
-    border: solid 1px var(--b3-theme-zz2);
+    /*border: solid 2.3px var(--b3-theme-zz2);*/
   }
   /* 添加块引用钉住图标动画 */
   .block__popover--move .block__icon .ft__primary {
@@ -292,12 +293,26 @@ strong[style*="background-color: var"],
   }
 
 /* 标签 */
+.protyle-wysiwyg [data-node-id] span[data-type="tag"]:not(:empty) {
+  display: inline-block;
+  color: var(--b3-theme-zz1);
+  background-color: var(--b3-theme-zz2);
+  font-size: 70%;
+  border-radius: 15px;
+  padding: 3px 12px 3px 10px;
+  transition: 0.16s;
+}
+.protyle-wysiwyg [data-node-id] span[data-type="tag"]:not(:empty):hover {
+  transform: translateY(2px);
+}
 /* 标签#号 */
 .protyle-wysiwyg [data-node-id] span[data-type="tag"]:not(:empty)::before {
-  content: "#";
+  content: "# ";
+  font-weight: bold;
 }
 .protyle-wysiwyg [data-node-id] span[data-type="tag"]:not(:empty)::after {
-  content: "#";
+  content: " #";
+  font-weight: bold;
 }
 
 /* 超链接 */
@@ -307,27 +322,39 @@ strong[style*="background-color: var"],
   border-bottom: 1px solid var(--b3-theme-zz2);
   word-break: break-all;
   font-weight: bold;
-  /* border-bottom: 1px solid transparent; */
-  /* text-decoration: underline; */
+  transition: 0.4s;
 }
 .protyle-wysiwyg [data-node-id] span[data-type="a"]::before {
+  /*超链接前面的符号*/
   content: "@ ";
+  transition: 0.1s;
 }
 .protyle-wysiwyg [data-node-id] span[data-type="a"]:hover {
-  border-bottom: 1px solid var(--b3-theme-zz2);
+  color: var(--b3-theme-zz5);
+  border-bottom: 1px solid var(--b3-theme-zz5);
+}
+.protyle-wysiwyg [data-node-id] span[data-type="a"]:hover::before{
+  content: "访问 ";
 }
 .b3-typography a {
-  word-break: break-all;
+  /*断行样式*/
+  word-break: break-all;/*对于non-CJK (CJK 指中文/日文/韩文) 文本，可在任意字符间断行。*/
 }
 
 /*标记*/
 mark {
+  display: inline-block;
   background-color: var(--b3-theme-zz2) !important;
   color: var(--b3-theme-zz1) !important;
   font-size: 90%;
   padding: 2px;
   border-radius: 3px;
+  transition: 0.16s;
+
 }
+mark:hover {
+  transform: translate(0px, -2px);}
+
 /* 搜索高亮 */
 .b3-list mark,
 .protyle-wysiwyg [data-node-id] span[data-type="search-mark"] {
@@ -351,6 +378,23 @@ mark {
   border: 1px solid var(--b3-theme-zz2);
   color: var(--b3-theme-zz2);
 }
+.b3-typography code:not(.hljs):not(:empty):hover,
+.protyle-wysiwyg code:not(.hljs):not(:empty):hover {
+  box-shadow: 2px 2px 1px 1px rgba(36, 59, 54, 0.568);
+  transform: translate(0, -2px);
+  animation: qianru 0.3s ease-in-out;
+}
+@keyframes qianru {
+  from {
+    box-shadow: 0px 0px 0px 0px rgba(59, 102, 93, 0.568);
+    transform: translate(0, 0px);
+  }
+  to {
+    box-shadow: 2px 2px 1px 1px rgba(36, 59, 54, 0.568);
+    transform: translate(0, -2px);
+  }
+}
+
 
 /*嵌入*/
 .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
@@ -391,7 +435,13 @@ mark {
   background-color: var(--b3-theme-zz1);
   transform: translateY(-1.5px);
   box-shadow: 0px 1px 2px 1px var(--b3-theme-zz2);
+  transition: 0.13s;
 }
+.b3-typography kbd:hover,
+.protyle-wysiwyg kbd:hover{
+  transform: translateY(0.3px);
+  box-shadow: -0.5px -0.5px 2px 1px var(--b3-theme-zz2);
+} 
 
 /*超级块*/
 .protyle-wysiwyg > .sb {
@@ -461,7 +511,7 @@ mark {
 /* 调整菜单 */
 .b3-menu .b3-menu__item {
   padding: 4px 16px 0 8px;
-  border-radius: 2px !important;
+  border-radius: 4px !important;
 }
 .b3-menu {
   padding: 0px 0;
@@ -492,8 +542,7 @@ mark {
   border-radius: 2px;
   padding: 6px 6px 6px;
   min-width: 200px;
-  border: solid 1px;
-  border-color: var(--b3-theme-zz2);
+ /* border: solid 3px var(--b3-theme-zz2);*/
   animation: caidan 0.23s ease-in-out;
 }
 @keyframes caidan {
@@ -515,6 +564,9 @@ mark {
 }
 .b3-menu .b3-menu__submenu{
     transform:translateX(6px);
+}
+.protyle-util{
+  background-image: url(src/paper7.jpg)
 }
 
 /* -------------------------------代码块样式-------------------------------------- */
@@ -592,24 +644,28 @@ mark {
     height: 1.5em;
     opacity: 1;
     font-weight: bold;
+    transition: 0.4s;
   }
   .protyle-wysiwyg [data-node-id] span[data-type="file-annotation-ref"]:before {
     content: "「"; /*前半部分的符号*/
     color: var(--b3-theme-zz2); /*修改前半部分颜色*/
     margin-right: 3px;
     font-weight: bold;
+    transition: 0.4s;
   }
   .protyle-wysiwyg [data-node-id] span[data-type="file-annotation-ref"]:after {
     content: "」"; /*后半部分的符号*/
     color: var(--b3-theme-zz2); /*后改前半部分颜色*/
     margin-left: 3px;
     font-weight: bold;
+    transition: 0.4s;
   }
+  .protyle-wysiwyg [data-node-id] span[data-type="file-annotation-ref"]:hover,
+  .protyle-wysiwyg [data-node-id] span[data-type="file-annotation-ref"]:hover::before,
+  .protyle-wysiwyg [data-node-id] span[data-type="file-annotation-ref"]:hover::after {
+    color: var(--b3-theme-zz5);
   }
-  .protyle-wysiwyg [data-node-id] span[data-type="file-annotation-ref"]:hover {
-    color: var(--b3-protyle-inline-blockref-hover-color); /*更改鼠标悬浮的颜色*/
-    border-bottom: 1px dashed var(--b3-protyle-inline-blockref-hover-color);
-  }
+  
   /* pdf搜索高亮 */
   .textLayer .highlight.selected {
     background-color: var(--b3-theme-zz2);
