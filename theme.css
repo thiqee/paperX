@@ -29,14 +29,14 @@
   --b3-theme-zz1: #ffffff; /*白色*/
   --b3-theme-zz4: #6867672c; /*浅色、阴影色*/
   --b3-theme-zz7: #fcfcfc00; /*透明*/
-  --b3-theme-zz2: #22577e; /*主色*/
+  --b3-theme-zz2: #6363b5; /*主色*/
   --b3-theme-zz5: #fe7e6d; /*鼠标、光标经过颜色*/
-  --b3-theme-zz3: #f4e1e0; /*背景色*/
+  --b3-theme-zz3: #cef8ce; /*背景色*/
   /* 文字颜色 */
   --b3-theme-on-primary: #fff;
   --b3-theme-on-secondary: #fff;
-  --b3-theme-on-background: #22577e; /*重要！！！需与上面主色保持一致*/
-  --b3-theme-on-surface: #22577e; /*重要！！！需与上面主色保持一致*/
+  --b3-theme-on-background: #6363b5; /*重要！！！需与上面主色保持一致*/
+  --b3-theme-on-surface: #6363b5; /*重要！！！需与上面主色保持一致*/
   --b3-theme-on-error: #fff;
 
   /* 字体 */
@@ -210,16 +210,15 @@ strong[style*="background-color: var"],
 .b3-switch:after,
 .textLayer,
 .block__content,
+.protyle-util,/*模板选择界面*/
 .protyle-breadcrumb,/*面包屑*/
 .item__text,/*页签*/
 .b3-list-item b3-list-item--big:hover,
 ::-webkit-scrollbar-thumb {
   /*background-color: var(--b3-theme-zz3);*/ /*背景色*/
-  background-image: url(src/paper7.jpg); /*背景图*/
+  background-image: url(src/paper9.jpg); /*背景图*/
 }
-.b3-dialog__container {
-  /* 这个不知道干啥的*/
-}
+
 ::-webkit-scrollbar-thumb {
   /*滚动条*/
   background-color: rgba(24, 23, 23, 0);
