@@ -4,6 +4,8 @@
 ***
 ### 预览：一共八种配色，完整预览在上面的语雀里
 ![preview](./preview.png)
+![preview](./preview02.png)
+![preview](./preview04.png)
 ***
 ### 建议图标
 * notion-icon
