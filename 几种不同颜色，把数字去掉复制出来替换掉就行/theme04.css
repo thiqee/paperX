@@ -210,6 +210,7 @@ strong[style*="background-color: var"],
 .b3-switch:after,
 .textLayer,
 .block__content,
+.protyle-util,/*模板选择界面*/
 .protyle-breadcrumb,/*面包屑*/
 .item__text,/*页签*/
 .b3-list-item b3-list-item--big:hover,
