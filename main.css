@@ -543,10 +543,10 @@ mark:hover {
   border-left: 1px solid var(--b3-theme-zz2);
 }
 
-.b3-typography blockquote, .b3-typography .bq, .protyle-wysiwyg blockquote, .protyle-wysiwyg .bq {
+.protyle-wysiwyg .bq {
     padding: 4px;
     color:var(--b3-theme-zz2);
     background-color:rgba(182, 181, 181, 0.253);
-    border-left: 0.25em solid rgba(59, 58, 58, 0.534);
+    border-left: 0.25em solid rgba(70, 69, 69, 0.397);
     margin: 4px 0;
 }
