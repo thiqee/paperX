@@ -1,4 +1,4 @@
-@import url(/appearance/themes/paperX/main.css);
+@import url("main.css");
 @font-face {
   font-family: "MiSans-Normal";
   font-style: normal;
@@ -26,6 +26,7 @@
   --b3-theme-surface: #f3f3f3;
   --b3-theme-surface-light: rgba(243, 243, 243, 0.897);
   --b3-theme-error: #d23f31;
+  /*paperX自定义颜色*/
   --b3-theme-zz1: #ffffff; /*白色*/
   --b3-theme-zz4: #6867672c; /*浅色、阴影色*/
   --b3-theme-zz7: #fcfcfc00; /*透明*/
@@ -33,10 +34,10 @@
   --b3-theme-zz5: #fe7e6d; /*鼠标、光标经过颜色*/
   --b3-theme-zz3: #cef8ce; /*背景色*/
   /* 文字颜色 */
-  --b3-theme-on-primary: #fff;
-  --b3-theme-on-secondary: #fff;
   --b3-theme-on-background: #6363b5; /*重要！！！需与上面主色保持一致*/
   --b3-theme-on-surface: #6363b5; /*重要！！！需与上面主色保持一致*/
+  --b3-theme-on-primary: #fff;
+  --b3-theme-on-secondary: #fff;
   --b3-theme-on-error: #fff;
 
   /* 字体 */
@@ -210,6 +211,8 @@ strong[style*="background-color: var"],
 .b3-switch:after,
 .textLayer,
 .block__content,
+.item__side,/*集市页左侧*/
+.item__main,/*集市页右侧*/
 .protyle-util,/*模板选择界面*/
 .protyle-breadcrumb,/*面包屑*/
 .item__text,/*页签*/
