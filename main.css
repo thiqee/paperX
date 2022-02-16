@@ -200,7 +200,7 @@ mark:hover {
   display: inline-flex;
   padding: 2px 4px;
   margin: 0px 2px;
-  font-size: 70%;
+  font-size: 90%;
   color:rgba(56, 55, 55, 0.692);
   /*border: solid 0.5px var(--b3-theme-zz2);*/
   background-color: var(--b3-theme-zz1);
@@ -506,7 +506,7 @@ mark:hover {
   background-color: var(--b3-theme-zz4) !important;
 }*/
 
-/*-----无序列表-----*/
+/*-----列表-----*/
 /*无折叠hover*/
 .protyle-wysiwyg [data-node-id].li > .protyle-action:hover:after {
   /* 大圆背景 */
@@ -517,18 +517,16 @@ mark:hover {
   /* 小圆点 */
   color: var(--b3-theme-zz1);
 }
-
 /* 列表折叠 */
 .protyle-wysiwyg [data-node-id].li[fold="1"] > .protyle-action:after {
   /* 大圆背景 */
-  background-color: rgba(58, 55, 55, 0.514) !important;
+  background-color: rgba(61, 60, 60, 0.514) !important;
   opacity: 0.68;
 }
 .protyle-wysiwyg [data-node-id].li[fold="1"] > .protyle-action {
   /* 小圆点 */
   color: var(--b3-theme-zz2) !important;
 }
-
 .protyle-wysiwyg [data-node-id].li[fold="1"] > .protyle-action:hover {
   /* 折叠经过小圆背景 */
   color: var(--b3-theme-zz1) !important;
@@ -542,7 +540,23 @@ mark:hover {
 .protyle-wysiwyg [data-node-id].li>[data-node-id]:before {
   border-left: 1px solid var(--b3-theme-zz2);
 }
+/**光标所在序号颜色加强**/
+.protyle-wysiwyg [data-node-id].li:focus-within > .protyle-action {
+  color: var(--b3-theme-zz2) !important;
+  font-weight: bold;
+}
+/**光标所在圆点颜色加强**/
+.protyle-wysiwyg [data-subtype="u"]:focus-within > .protyle-action svg {
+  height: 20px;
+  color: var(--b3-theme-zz2);
+}
+.protyle-wysiwyg [data-subtype="u"]:focus-within > .protyle-action svg:hover {
+  height: 20px;
+  color: var(--b3-theme-zz1);
+}
 
+
+/*引述块*/
 .protyle-wysiwyg .bq {
     padding: 4px;
     color:var(--b3-theme-zz2);
@@ -550,3 +564,5 @@ mark:hover {
     border-left: 0.25em solid rgba(70, 69, 69, 0.397);
     margin: 4px 0;
 }
+
+/*集市页*/
