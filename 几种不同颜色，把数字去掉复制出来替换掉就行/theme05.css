@@ -16,7 +16,7 @@
 }
 :root {
   /* 主色 */
-  --b3-theme-primary: #adabad6e;
+  --b3-theme-primary: #382370cb;
   --b3-theme-primary-light: rgba(66, 133, 244, 0.54);
   --b3-theme-primary-lighter: rgba(66, 133, 244, 0.38);
   --b3-theme-primary-lightest: rgba(66, 134, 244, 0.199);
@@ -33,7 +33,7 @@
   --b3-theme-zz5: #fe7e6d; /*鼠标、光标经过颜色*/
   --b3-theme-zz3: #f4e1e0; /*背景色*/
   /* 文字颜色 */
-  --b3-theme-on-primary: #fff;
+  --b3-theme-on-primary: #f5f3f5e7;
   --b3-theme-on-secondary: #fff;
   --b3-theme-on-background: #22577e; /*重要！！！需与上面主色保持一致*/
   --b3-theme-on-surface: #22577e; /*重要！！！需与上面主色保持一致*/
@@ -210,6 +210,8 @@ strong[style*="background-color: var"],
 .b3-switch:after,
 .textLayer,
 .block__content,
+.item__side,/*集市页左侧*/
+.item__main,/*集市页右侧*/
 .protyle-util,/*模板选择界面*/
 .protyle-breadcrumb,/*面包屑*/
 .item__text,/*页签*/
