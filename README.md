@@ -9,7 +9,7 @@
 ![preview](./preview02.png)
 ![preview](./preview01.png)
 * 更换颜色的方法：
-*** 在预览中找到喜欢的颜色，在下面的文件夹里找到对应编号的css，复制出来替换掉theme.css就可以了。
+在预览中找到喜欢的颜色，在下面的文件夹里找到对应编号的css，复制出来替换掉theme.css就可以了。
 ![](./x1.png)
 ### 建议图标
 * notion-icon
