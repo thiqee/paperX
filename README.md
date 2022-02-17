@@ -3,7 +3,7 @@
 * 因为我刚接触没几天，连选择器都找不着哈哈。借鉴了很多大佬的成果，非常感谢各位大佬！
 * 更新日志：https://www.yuque.com/u1056440/uakg66/wn841g
 ***
-### 预览：一共九种配色，完整预览在下面的语雀里
+### 预览：一共八种配色，完整预览在下面的语雀里
 * 完整预览：https://www.yuque.com/u1056440/uakg66/irxvdg
 ![preview](./preview.png)
 ![preview](./preview02.png)
