@@ -7,7 +7,7 @@
 * 完整预览：https://www.yuque.com/u1056440/uakg66/irxvdg
 ![preview](./preview.png)
 ![preview](./preview02.png)
-![preview](./preview04.png)
+![preview](./preview01.png)
 * 更换颜色的方法：
 *** 在预览中找到喜欢的颜色，在下面的文件夹里找到对应编号的css，复制出来替换掉theme.css就可以了。
 ![](./x1.png)
